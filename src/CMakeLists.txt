@@ -1,5 +1,6 @@
 add_executable(finmanp
     main.cpp
+    accounts.cpp
 )
 
 # Add include directory
