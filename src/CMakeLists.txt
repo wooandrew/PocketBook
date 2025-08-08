@@ -1,6 +1,10 @@
 add_executable(finmanp
     main.cpp
     accounts.cpp
+    
+    ledger.cpp
+    transaction.cpp
+    receipt.cpp
 )
 
 # Add include directory
