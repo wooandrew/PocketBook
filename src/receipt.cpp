@@ -7,6 +7,12 @@
 
 namespace arcxh::finmanp {
 
+    Receipt::Receipt() {
+
+        vendor = "";
+        ymd = std::chrono::floor<std::chrono::days>(std::chrono::system_clock::now());
+    }
+
     Receipt::Receipt(const std::string& vendor, const std::chrono::year_month_day ymd) {
 
         this->vendor = vendor;

@@ -15,6 +15,7 @@ namespace arcxh::finmanp {
 
     public:
 
+        Receipt();
         Receipt(const std::string& vendor, const std::chrono::year_month_day ymd);
         ~Receipt();
 
