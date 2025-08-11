@@ -1,6 +1,6 @@
 add_executable(finmanp
     main.cpp
-    accounts.cpp
+    account.cpp
     
     ledger.cpp
     transaction.cpp
