@@ -15,8 +15,19 @@ namespace arcxh::finmanp {
 
     }
 
-    int Ledger::addTransaction(std::weak_ptr<Transaction> transaction) {
+    int Ledger::addTransaction(std::shared_ptr<Transaction> transaction) {
         transactions.push_back(transaction);
         return ARCXH_SUCCESS;
+    }
+
+    int Ledger::addTransaction(const float amount, const Transaction::Type type) {
+
+        int ret = 0;
+
+        Transaction transaction = Transaction();
+        ret = transaction.setAmount(amount);
+        ret &= transaction.setType(type);
+
+        return ret;
     }
 }

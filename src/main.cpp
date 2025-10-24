@@ -4,14 +4,17 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <memory>
 
-#include "accounts.hpp"
+#include "account.hpp"
+#include "transaction.hpp"
 
 int main(int argc, char* argv[]) {
 
     std::cout << ">>> finmanp <<<" << std::endl;
 
-    arcxh::finmanp::Account testAcc("testAcc", 0);
+    std::shared_ptr<arcxh::finmanp::Account> testAcc = std::make_shared("testAcc", 0.f);
+
 
     bool exit = false;
 
@@ -25,7 +28,14 @@ int main(int argc, char* argv[]) {
         if (input == "exit")
             exit = true;
         else if (input == "bal") {
-            std::cout << testAcc.getBalance_S() << std::endl;
+            std::cout << testAcc->getBalanceS() << std::endl;
+        }
+        else if (input == "new-transaction") {
+
+            arcxh::finmanp::Transaction transaction;
+            std::shared_ptr<arcxh::finmanp::Transaction> __t = std::make_shared();
+
+            __t->setAccount(testAcc);
         }
 
         std::cout << input << std::endl;

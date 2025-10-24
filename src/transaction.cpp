@@ -48,6 +48,11 @@ namespace arcxh::finmanp {
         return ARCXH_SUCCESS;
     }
 
+    int Transaction::setType(const Transaction::Type type) {
+        this->type = type;
+        return ARCXH_SUCCESS;
+    }
+
     int Transaction::setInternalRef(const std::string internal_ref) {
         this->internal_ref = internal_ref;
         return ARCXH_SUCCESS;

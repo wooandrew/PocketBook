@@ -13,9 +13,16 @@
 
 namespace arcxh::finmanp {
 
+    class Account;      // Forward Declaration
+
     class Transaction {
       
     public:
+
+        enum class Type {
+            deposit,
+            withdraw
+        };
 
         Transaction();
         ~Transaction();
@@ -29,6 +36,8 @@ namespace arcxh::finmanp {
         int setAccount(const std::weak_ptr<Account> payment_method);
         int setAmount(const float amount);
 
+        int setType(const Type type);
+
         int setInternalRef(const std::string internal_ref);
 
     private:
@@ -41,6 +50,8 @@ namespace arcxh::finmanp {
         std::chrono::year_month_day datetime;
         std::weak_ptr<Account> payment_method;
         float amount;
+
+        Transaction::Type type;
         
         std::string internal_ref;
     };

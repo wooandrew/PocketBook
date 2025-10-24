@@ -1,12 +1,12 @@
-// finmanp - accounts.cpp
+// finmanp - account.cpp
 // Copyright (c) 2025 Andrew Woo
 
-#include "accounts.hpp"
+#include "account.hpp"
+
+#include "arcxh.hpp"
 
 #include <iomanip>
 #include <sstream>
-
-constexpr int ARCXH_SUCCESS = 1;
 
 namespace arcxh::finmanp {
 
@@ -37,12 +37,11 @@ namespace arcxh::finmanp {
         return ARCXH_SUCCESS;
     }
 
-    float Account::getBalance_F() const {
+    float Account::getBalanceF() const {
         return balance;
     }
 
-    std::string Account::getBalance_S() const {
-
+    std::string Account::getBalanceS() const {
         std::ostringstream oss;
         oss << std::fixed << std::setprecision(2) << balance;
         return oss.str();
@@ -58,4 +57,8 @@ namespace arcxh::finmanp {
         return ARCXH_SUCCESS;
     }
 
+    int Account::newTransaction(const std::shared_ptr<Transaction> transaction) {
+        int results = ledger->addTransaction(transaction);
+        return results;
+    }
 }
