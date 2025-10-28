@@ -5,21 +5,21 @@
 
 #include "arcxh.hpp"
 
+#include <iostream>
 #include <iomanip>
 #include <sstream>
 
 namespace arcxh::finmanp {
 
     Account::Account(const std::string& name) {
-
-        this->name = name;
-        this->balance = 0.0F;
+        Account(name, 0.F);
     };
 
     Account::Account(const std::string& name, const float balance) {
 
         this->name = name;
         this->balance = balance;
+        ledger = std::make_shared<Ledger>();
     };
 
     Account::~Account() {
@@ -27,9 +27,11 @@ namespace arcxh::finmanp {
     };
 
     int Account::setName(const std::string& name) {
-
         this->name = name;
         return ARCXH_SUCCESS;
+    }
+    std::string Account::getName() const {
+        return name;
     }
 
     int Account::setBalance(const float balance) {
@@ -57,8 +59,17 @@ namespace arcxh::finmanp {
         return ARCXH_SUCCESS;
     }
 
-    int Account::newTransaction(const std::shared_ptr<Transaction> transaction) {
+    int Account::newTransaction(const std::shared_ptr<Transaction>& transaction) {
+        
         int results = ledger->addTransaction(transaction);
+        
+        if (transaction->getType() == Transaction::Type::deposit)
+            addBalance(transaction->getAmount());
+        else if (transaction->getType() == Transaction::Type::withdraw)
+            subBalance(transaction->getAmount());
+        else
+            results = ARCXH_FAIL;
+
         return results;
     }
 }

@@ -23,6 +23,7 @@ namespace arcxh::finmanp {
         ~Account();
 
         int setName(const std::string& name);
+        std::string getName() const;
 
         int setBalance(const float balance);
         float getBalanceF() const;
@@ -31,7 +32,7 @@ namespace arcxh::finmanp {
         int addBalance(const float amount);
         int subBalance(const float amount);
 
-        int newTransaction(const std::shared_ptr<Transaction> transaction);
+        int newTransaction(const std::shared_ptr<Transaction>& transaction);
 
     private:
 

@@ -7,8 +7,25 @@
 
 namespace arcxh::finmanp {
 
+    Transaction::Type Transaction::typeFromStr(const std::string& str) {
+
+        Transaction::Type type = Transaction::Type::deposit;
+
+        if (str == "w" || str == "withdraw")
+            type = Transaction::Type::withdraw;
+        else if (str != "d" && str != "deposit")
+            type = Transaction::Type::unknown;
+
+        return type;
+    }
+
     Transaction::Transaction() {
 
+    }
+
+    Transaction::Transaction(const Type type, const float amount) {
+        this->amount = amount;
+        this->type = type;
     }
 
     Transaction::~Transaction() {
@@ -39,18 +56,29 @@ namespace arcxh::finmanp {
         this->datetime = datetime;
         return ARCXH_SUCCESS;
     }
-    int Transaction::setAccount(const std::weak_ptr<Account> payment_method) {
-        this->payment_method = payment_method;
+    
+    int Transaction::setAccount(const std::weak_ptr<Account> account) {
+        this->account = account;
         return ARCXH_SUCCESS;
     }
+    std::weak_ptr<Account> Transaction::getAccount() const {
+        return account;
+    }
+
     int Transaction::setAmount(const float amount) {
         this->amount = amount;
         return ARCXH_SUCCESS;
+    }
+    float Transaction::getAmount() const {
+        return amount;
     }
 
     int Transaction::setType(const Transaction::Type type) {
         this->type = type;
         return ARCXH_SUCCESS;
+    }
+    Transaction::Type Transaction::getType() const {
+        return type;
     }
 
     int Transaction::setInternalRef(const std::string internal_ref) {

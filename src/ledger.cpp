@@ -15,7 +15,7 @@ namespace arcxh::finmanp {
 
     }
 
-    int Ledger::addTransaction(std::shared_ptr<Transaction> transaction) {
+    int Ledger::addTransaction(const std::shared_ptr<Transaction>& transaction) {
         transactions.push_back(transaction);
         return ARCXH_SUCCESS;
     }
@@ -24,9 +24,8 @@ namespace arcxh::finmanp {
 
         int ret = 0;
 
-        Transaction transaction = Transaction();
-        ret = transaction.setAmount(amount);
-        ret &= transaction.setType(type);
+        std::shared_ptr<Transaction> transaction = std::make_shared<Transaction>(type, amount);
+        transactions.push_back(transaction);
 
         return ret;
     }

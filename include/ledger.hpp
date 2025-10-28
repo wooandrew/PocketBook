@@ -17,7 +17,7 @@ namespace arcxh::finmanp {
         Ledger();
         ~Ledger();
 
-        int addTransaction(std::shared_ptr<Transaction> transaction);
+        int addTransaction(const std::shared_ptr<Transaction>& transaction);
         int addTransaction(const float amount, const Transaction::Type type);
 
     private:

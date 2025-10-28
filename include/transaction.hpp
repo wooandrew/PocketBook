@@ -20,10 +20,14 @@ namespace arcxh::finmanp {
 
         enum class Type {
             deposit,
-            withdraw
+            withdraw,
+            unknown
         };
 
+        static Type typeFromStr(const std::string& str);
+
         Transaction();
+        Transaction(const Type type, const float amount);
         ~Transaction();
 
         int setReceipt(const std::shared_ptr<Receipt> receipt);
@@ -32,10 +36,15 @@ namespace arcxh::finmanp {
         int setVendor(const std::string vendor);
         int setCategory(const std::string category);
         int setDatetime(const std::chrono::year_month_day datetime);
-        int setAccount(const std::weak_ptr<Account> payment_method);
+        
+        int setAccount(const std::weak_ptr<Account> account);
+        std::weak_ptr<Account> getAccount() const;
+        
         int setAmount(const float amount);
+        float getAmount() const;
 
         int setType(const Type type);
+        Type getType() const;
 
         int setInternalRef(const std::string internal_ref);
 
@@ -47,7 +56,7 @@ namespace arcxh::finmanp {
         std::string vendor;
         std::string category;
         std::chrono::year_month_day datetime;
-        std::weak_ptr<Account> payment_method;
+        std::weak_ptr<Account> account;
         float amount;
 
         Transaction::Type type;
