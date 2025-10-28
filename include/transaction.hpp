@@ -5,7 +5,6 @@
 #define ARCXH_FINMANP_TRANSACTION
 
 #include "receipt.hpp"
-#include "account.hpp"
 
 #include <memory>
 #include <string>

@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
 
     std::cout << ">>> finmanp <<<" << std::endl;
 
-    std::shared_ptr<arcxh::finmanp::Account> testAcc = std::make_shared("testAcc", 0.f);
+    std::shared_ptr<arcxh::finmanp::Account> testAcc = std::make_shared<arcxh::finmanp::Account>("testAcc", 0.f);
 
 
     bool exit = false;
@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
         else if (input == "new-transaction") {
 
             arcxh::finmanp::Transaction transaction;
-            std::shared_ptr<arcxh::finmanp::Transaction> __t = std::make_shared();
+            std::shared_ptr<arcxh::finmanp::Transaction> __t = std::make_shared<arcxh::finmanp::Transaction>();
 
             __t->setAccount(testAcc);
         }
