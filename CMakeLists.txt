@@ -1,3 +1,5 @@
+# root CMakeLists.txt
+
 cmake_minimum_required(VERSION 3.15)
 
 # Project name and language
@@ -9,3 +11,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Add the src directory
 add_subdirectory(src)
+
+# gRPC
+include(FetchContent)
+FetchContent_Declare(
+  gRPC
+  GIT_REPOSITORY https://github.com/grpc/grpc
+  GIT_TAG        v1.76.0
+)
+set(FETCHCONTENT_QUIET OFF)
+FetchContent_MakeAvailable(gRPC)

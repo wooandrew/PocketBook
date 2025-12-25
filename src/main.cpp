@@ -5,7 +5,11 @@
 #include <sstream>
 #include <vector>
 #include <string>
+#include <ranges>
 #include <memory>
+#include <map>
+
+#include <grpcpp/grpcpp.h>
 
 #include "account.hpp"
 #include "transaction.hpp"
@@ -26,8 +30,11 @@ int main(int argc, char* argv[]) {
 
     std::cout << ">>> finmanp <<<" << std::endl;
 
-    std::shared_ptr<arcxh::finmanp::Account> testAcc = std::make_shared<arcxh::finmanp::Account>("testAcc", 0.f);
+    std::map<std::string, std::shared_ptr<arcxh::finmanp::Account>> accounts;
+    accounts["Savings"] = std::make_shared<arcxh::finmanp::Account>("Savings", 0.f);
+    accounts["Checking"] = std::make_shared<arcxh::finmanp::Account>("Checking", 0.f);
 
+    std::shared_ptr<arcxh::finmanp::Account> activeAccount = accounts["Savings"];
 
     bool exit = false;
 
@@ -43,12 +50,29 @@ int main(int argc, char* argv[]) {
 
         if (cmd == "exit")
             exit = true;
+        else if (cmd == "list-acc") {
+            for (const auto& key : accounts | std::views::keys) {
+                std::cout << '\t' << key << std::endl;
+            }
+        }
+        else if (cmd == "use-acc") {
+            std::map<std::string, std::shared_ptr<arcxh::finmanp::Account>>::iterator it = accounts.find(tokens[1]);
+            if (it == accounts.end()) {
+                std::cout << "Error: Unknown Account specified";
+                continue;
+            }
+            
+            activeAccount = it->second;
+        }
+        else if (cmd == "which-acc") {
+            std::cout << activeAccount->getName() << std::endl;
+        }
         else if (cmd == "bal") {
-            std::cout << testAcc->getBalanceS() << std::endl;
+            std::cout << activeAccount->getBalanceS() << std::endl;
         }
         else if (cmd == "set-bal") {
             float bal = std::stof(tokens[1]);
-            testAcc->setBalance(bal);
+            activeAccount->setBalance(bal);
         }
         else if (cmd == "new-transaction") {
 
@@ -59,10 +83,8 @@ int main(int argc, char* argv[]) {
 
             arcxh::finmanp::Transaction::Type type = arcxh::finmanp::Transaction::typeFromStr(tokens[1]);
             if (type != arcxh::finmanp::Transaction::Type::unknown) {
-
                 std::shared_ptr<arcxh::finmanp::Transaction> transaction = std::make_shared<arcxh::finmanp::Transaction>(type, std::stof(tokens[2]));
-                transaction->setAccount(testAcc);
-                testAcc->newTransaction(transaction);
+                activeAccount->newTransaction(transaction);
             }
             else {
                 std::cerr << "Unknown transaction type [" << tokens[1] << "]" << std::endl;

@@ -1,3 +1,5 @@
+# src/CMakeLists.txt
+
 add_executable(finmanp
     main.cpp
     account.cpp
@@ -13,3 +15,6 @@ target_include_directories(finmanp PRIVATE ${PROJECT_SOURCE_DIR}/include)
 set_target_properties(finmanp PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin
 )
+
+# Link gRPC
+target_link_libraries(finmanp gRPC::grpc++)

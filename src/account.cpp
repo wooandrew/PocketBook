@@ -62,6 +62,7 @@ namespace arcxh::finmanp {
     int Account::newTransaction(const std::shared_ptr<Transaction>& transaction) {
         
         int results = ledger->addTransaction(transaction);
+        transaction->setAccount(shared_from_this());
         
         if (transaction->getType() == Transaction::Type::deposit)
             addBalance(transaction->getAmount());

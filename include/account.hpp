@@ -6,6 +6,7 @@
 
 #include <string>
 
+#include "serialize.hpp"
 #include "ledger.hpp"
 #include "transaction.hpp"
 
@@ -14,7 +15,10 @@ namespace arcxh::finmanp {
     class Ledger;       // Forward Declaration
     class Transaction;  // Forward Declaration
     
-    class Account {
+    class Account : 
+        public std::enable_shared_from_this<Account>,
+        public Serializable
+    {
 
     public:
 
