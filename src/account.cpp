@@ -1,13 +1,16 @@
 // finmanp - account.cpp
 // Copyright (c) 2025 Andrew Woo
 
+// Header
 #include "account.hpp"
 
-#include "arcxh.hpp"
-
+// stdlib
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+
+// arcxhlib
+#include "arcxh.hpp"
 
 namespace arcxh::finmanp {
 

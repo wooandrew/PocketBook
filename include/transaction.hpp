@@ -4,11 +4,13 @@
 #ifndef ARCXH_FINMANP_TRANSACTION
 #define ARCXH_FINMANP_TRANSACTION
 
-#include "receipt.hpp"
-
+// stdlib
 #include <memory>
 #include <string>
 #include <chrono>
+
+// arcxhlib
+#include "receipt.hpp"
 
 namespace arcxh::finmanp {
 

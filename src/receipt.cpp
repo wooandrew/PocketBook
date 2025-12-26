@@ -1,8 +1,12 @@
 // finmanp - receipt.cpp
 // Copyright (c) 2025 Andrew Woo
 
+// Header
 #include "receipt.hpp"
 
+// stdlib
+
+// arcxhlib
 #include "arcxh.hpp"
 
 namespace arcxh::finmanp {

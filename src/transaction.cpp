@@ -1,8 +1,12 @@
 // finmanp - transaction.cpp
 // Copyright (c) 2025 Andrew Woo
 
+// Header
 #include "transaction.hpp"
 
+// stdlib
+
+// arcxhlib
 #include "arcxh.hpp"
 
 namespace arcxh::finmanp {

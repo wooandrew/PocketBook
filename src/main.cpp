@@ -1,6 +1,7 @@
 // finmanp - an mServArcxh microservice
 // Copyright (c) 2025 Andrew Woo
 
+// stdlib
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -9,8 +10,12 @@
 #include <memory>
 #include <map>
 
+// extlib
 #include <grpcpp/grpcpp.h>
 
+// protolib
+
+// arcxhlib
 #include "account.hpp"
 #include "transaction.hpp"
 

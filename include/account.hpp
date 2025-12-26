@@ -4,8 +4,10 @@
 #ifndef ARCXH_FINMANP_ACCOUNT
 #define ARCXH_FINMANP_ACCOUNT
 
+// stdlib
 #include <string>
 
+// arcxhlib
 #include "serialize.hpp"
 #include "ledger.hpp"
 #include "transaction.hpp"
@@ -41,7 +43,7 @@ namespace arcxh::finmanp {
     private:
 
         std::string name;
-        float balance;
+        float balance;          // TODO: Split into units and nanos ,,, REASON: Avoid floating point arithmetic and errors there related
 
         std::shared_ptr<Ledger> ledger;
     };
