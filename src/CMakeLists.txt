@@ -2,15 +2,17 @@
 
 add_executable(finmanp
     main.cpp
+
     account.cpp
-    
     ledger.cpp
-    transaction.cpp
+    money.cpp
     receipt.cpp
+    transaction.cpp
 )
 
 # Add include directory
 target_include_directories(finmanp PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(finmanp PRIVATE ${PROJECT_SOURCE_DIR}/proto)
 
 # Set output directory
 set_target_properties(finmanp PROPERTIES

@@ -14,9 +14,11 @@
 #include <grpcpp/grpcpp.h>
 
 // protolib
+#include <proto/transaction.h>
 
 // arcxhlib
 #include "account.hpp"
+#include "money.hpp"
 #include "transaction.hpp"
 
 std::vector<std::string> tokenize(const std::string& input, const char delimiter) {
@@ -34,6 +36,12 @@ std::vector<std::string> tokenize(const std::string& input, const char delimiter
 int main(int argc, char* argv[]) {
 
     std::cout << ">>> finmanp <<<" << std::endl;
+
+    arcxh::finmanp::Money m1(2, 750000000);
+    arcxh::finmanp::Money m2(3, 250000000);
+    arcxh::finmanp::Money m3 = m1 + m2;
+
+    std::cout << arcxh::finmanp::Money::MoneyAsString(m3) << std::endl;
 
     std::map<std::string, std::shared_ptr<arcxh::finmanp::Account>> accounts;
     accounts["Savings"] = std::make_shared<arcxh::finmanp::Account>("Savings", 0.f);

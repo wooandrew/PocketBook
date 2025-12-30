@@ -6,12 +6,12 @@
 
 namespace arcxh::finmanp {
 
-    class Serializable {
+    class ISerializable {
 
     public:
 
-        void Serialize();
-
+    private:
+        virtual void serialize() = 0;
     };
 }
 

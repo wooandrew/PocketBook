@@ -29,6 +29,10 @@ namespace arcxh::finmanp {
 
     };
 
+    void Account::serialize() {
+
+    }
+
     int Account::setName(const std::string& name) {
         this->name = name;
         return ARCXH_SUCCESS;

@@ -19,7 +19,7 @@ namespace arcxh::finmanp {
     
     class Account : 
         public std::enable_shared_from_this<Account>,
-        public Serializable
+        public ISerializable
     {
 
     public:
@@ -46,6 +46,8 @@ namespace arcxh::finmanp {
         float balance;          // TODO: Split into units and nanos ,,, REASON: Avoid floating point arithmetic and errors there related
 
         std::shared_ptr<Ledger> ledger;
+
+        void serialize() override;
     };
 }
 
