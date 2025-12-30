@@ -4,7 +4,7 @@
 include(${grpc_SOURCE_DIR}/third_party/protobuf/cmake/protobuf-generate.cmake)
 
 add_library(protolib STATIC
-    test.proto
+    transaction.proto
 )
 
 target_link_libraries(protolib PUBLIC

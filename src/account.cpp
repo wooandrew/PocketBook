@@ -67,12 +67,15 @@ namespace arcxh::finmanp {
         int results = ledger->addTransaction(transaction);
         transaction->setAccount(shared_from_this());
         
-        if (transaction->getType() == Transaction::Type::deposit)
+        if (transaction->getType() == Transaction::Type::deposit) {
             addBalance(transaction->getAmount());
-        else if (transaction->getType() == Transaction::Type::withdraw)
+        }
+        else if (transaction->getType() == Transaction::Type::withdraw) {
             subBalance(transaction->getAmount());
-        else
+        }
+        else {
             results = ARCXH_FAIL;
+        }
 
         return results;
     }

@@ -15,10 +15,12 @@ namespace arcxh::finmanp {
 
         Transaction::Type type = Transaction::Type::deposit;
 
-        if (str == "w" || str == "withdraw")
+        if (str == "w" || str == "withdraw"){
             type = Transaction::Type::withdraw;
-        else if (str != "d" && str != "deposit")
+        }
+        else if (str != "d" && str != "deposit") {
             type = Transaction::Type::unknown;
+        }
 
         return type;
     }
