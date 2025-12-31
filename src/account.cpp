@@ -14,14 +14,12 @@
 
 namespace arcxh::finmanp {
 
-    Account::Account(const std::string& name) {
-        Account(name, 0.F);
-    };
+    Account::Account(const std::string& name) : Account(name, Money{0, 0}) { };
 
-    Account::Account(const std::string& name, const float balance) {
-
-        this->name = name;
-        this->balance = balance;
+    Account::Account(const std::string& name, const Money&balance) :
+        name(name),
+        balance(balance)
+    {
         ledger = std::make_shared<Ledger>();
     };
 
@@ -41,27 +39,25 @@ namespace arcxh::finmanp {
         return name;
     }
 
-    int Account::setBalance(const float balance) {
+    int Account::setBalance(const Money& balance) {
         this->balance = balance;
         return ARCXH_SUCCESS;
     }
 
-    float Account::getBalanceF() const {
+    Money Account::getBalance() const {
         return balance;
     }
 
     std::string Account::getBalanceS() const {
-        std::ostringstream oss;
-        oss << std::fixed << std::setprecision(2) << balance;
-        return oss.str();
+        return Money::MoneyAsString(balance);
     }
 
-    int Account::addBalance(const float amount) {
+    int Account::addBalance(const Money& amount) {
         balance += amount;
         return ARCXH_SUCCESS;
     }
 
-    int Account::subBalance(const float amount) {
+    int Account::subBalance(const Money& amount) {
         balance -= amount;
         return ARCXH_SUCCESS;
     }

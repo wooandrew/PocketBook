@@ -5,6 +5,8 @@
 #include "ledger.hpp"
 
 // stdlib
+#include <vector>
+#include <memory>
 
 // arcxhlib
 #include "arcxh.hpp"
@@ -24,13 +26,11 @@ namespace arcxh::finmanp {
         return ARCXH_SUCCESS;
     }
 
-    int Ledger::addTransaction(const float amount, const Transaction::Type type) {
-
-        int ret = 0;
+    int Ledger::addTransaction(const Money& amount, const Transaction::Type type) {
 
         std::shared_ptr<Transaction> transaction = std::make_shared<Transaction>(type, amount);
         transactions.push_back(transaction);
 
-        return ret;
+        return ARCXH_SUCCESS;
     }
 }

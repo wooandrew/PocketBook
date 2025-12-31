@@ -5,9 +5,12 @@
 #include "transaction.hpp"
 
 // stdlib
+#include <string>
+#include <chrono>
 
 // arcxhlib
 #include "arcxh.hpp"
+#include "money.hpp"
 
 namespace arcxh::finmanp {
 
@@ -29,9 +32,11 @@ namespace arcxh::finmanp {
 
     }
 
-    Transaction::Transaction(const Type type, const float amount) {
-        this->amount = amount;
-        this->type = type;
+    Transaction::Transaction(const Type type, const Money& amount) :
+        type(type),
+        amount(amount)
+    {
+    
     }
 
     Transaction::~Transaction() {
@@ -71,11 +76,11 @@ namespace arcxh::finmanp {
         return account;
     }
 
-    int Transaction::setAmount(const float amount) {
+    int Transaction::setAmount(const Money& amount) {
         this->amount = amount;
         return ARCXH_SUCCESS;
     }
-    float Transaction::getAmount() const {
+    Money Transaction::getAmount() const {
         return amount;
     }
 

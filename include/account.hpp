@@ -8,8 +8,9 @@
 #include <string>
 
 // arcxhlib
-#include "serialize.hpp"
+#include "money.hpp"
 #include "ledger.hpp"
+#include "serialize.hpp"
 #include "transaction.hpp"
 
 namespace arcxh::finmanp {
@@ -25,25 +26,25 @@ namespace arcxh::finmanp {
     public:
 
         Account(const std::string& name);
-        Account(const std::string& name, const float balance);    
+        Account(const std::string& name, const Money& balance);    
         ~Account();
 
         int setName(const std::string& name);
         std::string getName() const;
 
-        int setBalance(const float balance);
-        float getBalanceF() const;
+        int setBalance(const Money& balance);
+        Money getBalance() const;
         std::string getBalanceS() const;
 
-        int addBalance(const float amount);
-        int subBalance(const float amount);
+        int addBalance(const Money& amount);
+        int subBalance(const Money& amount);
 
         int newTransaction(const std::shared_ptr<Transaction>& transaction);
 
     private:
 
         std::string name;
-        float balance;          // TODO: Split into units and nanos ,,, REASON: Avoid floating point arithmetic and errors there related
+        Money balance;
 
         std::shared_ptr<Ledger> ledger;
 

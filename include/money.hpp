@@ -14,7 +14,8 @@ namespace arcxh::finmanp {
     class Money {
 
     public:
-        
+
+        Money();
         Money(int unit, int nano);
         ~Money();
 

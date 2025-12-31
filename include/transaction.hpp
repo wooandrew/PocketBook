@@ -10,6 +10,7 @@
 #include <chrono>
 
 // arcxhlib
+#include "money.hpp"
 #include "receipt.hpp"
 
 namespace arcxh::finmanp {
@@ -29,7 +30,7 @@ namespace arcxh::finmanp {
         static Type typeFromStr(const std::string& str);
 
         Transaction();
-        Transaction(const Type type, const float amount);
+        Transaction(const Type type, const Money& amount);
         ~Transaction();
 
         int setReceipt(const std::shared_ptr<Receipt> receipt);
@@ -42,8 +43,8 @@ namespace arcxh::finmanp {
         int setAccount(const std::weak_ptr<Account> account);
         std::weak_ptr<Account> getAccount() const;
         
-        int setAmount(const float amount);
-        float getAmount() const;
+        int setAmount(const Money& amount);
+        Money getAmount() const;
 
         int setType(const Type type);
         Type getType() const;
@@ -59,7 +60,7 @@ namespace arcxh::finmanp {
         std::string category;
         std::chrono::year_month_day datetime;
         std::weak_ptr<Account> account;
-        float amount;
+        Money amount;
 
         Transaction::Type type;
         

@@ -17,8 +17,8 @@
 #include <proto/transaction.h>
 
 // arcxhlib
-#include "account.hpp"
 #include "money.hpp"
+#include "account.hpp"
 #include "transaction.hpp"
 
 std::vector<std::string> tokenize(const std::string& input, const char delimiter) {
@@ -44,8 +44,8 @@ int main(int argc, char* argv[]) {
     std::cout << arcxh::finmanp::Money::MoneyAsString(m3) << std::endl;
 
     std::map<std::string, std::shared_ptr<arcxh::finmanp::Account>> accounts;
-    accounts["Savings"] = std::make_shared<arcxh::finmanp::Account>("Savings", 0.f);
-    accounts["Checking"] = std::make_shared<arcxh::finmanp::Account>("Checking", 0.f);
+    accounts["Savings"] = std::make_shared<arcxh::finmanp::Account>("Savings", arcxh::finmanp::Money{0, 0});
+    accounts["Checking"] = std::make_shared<arcxh::finmanp::Account>("Checking", arcxh::finmanp::Money{0, 0});
 
     std::shared_ptr<arcxh::finmanp::Account> activeAccount = accounts["Savings"];
 
@@ -84,8 +84,8 @@ int main(int argc, char* argv[]) {
             std::cout << activeAccount->getBalanceS() << std::endl;
         }
         else if (cmd == "set-bal") {
-            float bal = std::stof(tokens[1]);
-            activeAccount->setBalance(bal);
+            std::vector<std::string> balParts = tokenize(tokens[1], '.');
+            activeAccount->setBalance(arcxh::finmanp::Money{std::stoi(balParts[0]), std::stoi(balParts[1]) * 10000000});
         }
         else if (cmd == "new-transaction") {
 
@@ -96,7 +96,8 @@ int main(int argc, char* argv[]) {
 
             arcxh::finmanp::Transaction::Type type = arcxh::finmanp::Transaction::typeFromStr(tokens[1]);
             if (type != arcxh::finmanp::Transaction::Type::unknown) {
-                std::shared_ptr<arcxh::finmanp::Transaction> transaction = std::make_shared<arcxh::finmanp::Transaction>(type, std::stof(tokens[2]));
+                std::vector<std::string> transactionParts = tokenize(tokens[2], '.');
+                std::shared_ptr<arcxh::finmanp::Transaction> transaction = std::make_shared<arcxh::finmanp::Transaction>(type, arcxh::finmanp::Money{std::stoi(transactionParts[0]), std::stoi(transactionParts[1]) * 10000000});
                 activeAccount->newTransaction(transaction);
             }
             else {

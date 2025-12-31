@@ -11,6 +11,7 @@
 #include <utility>
 
 // arcxhlib
+#include "money.hpp"
 
 namespace arcxh::finmanp {
 
@@ -22,24 +23,24 @@ namespace arcxh::finmanp {
         Receipt(const std::string& vendor, const std::chrono::year_month_day ymd);
         ~Receipt();
 
-        int addItem(const std::string& item, const float cost);
-        int addDiscount(const std::string& discount, const float amount);
+        int addItem(const std::string& item, const Money& cost);
+        int addDiscount(const std::string& discount, const Money& amount);
 
-        int setTax(const float tax);
-        int setTip(const float tip);
+        int setTax(const Money& tax);
+        int setTip(const Money& tip);
 
-        float getTotal() const;
+        Money getTotal() const;
 
     private:
 
         std::string vendor;
 
-        std::vector<std::pair<std::string, float>> items;
-        std::vector<std::pair<std::string, float>> discounts;
+        std::vector<std::pair<std::string, Money>> items;
+        std::vector<std::pair<std::string, Money>> discounts;
 
-        float subtotal;
-        float tax;
-        float tip;
+        Money subtotal;
+        Money tax;
+        Money tip;
 
         // Date
         std::chrono::year_month_day ymd;

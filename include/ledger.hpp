@@ -6,8 +6,10 @@
 
 // stdlib
 #include <vector>
+#include <memory>
 
 // arcxhlib
+#include "money.hpp"
 #include "transaction.hpp"
 
 namespace arcxh::finmanp {
@@ -20,7 +22,7 @@ namespace arcxh::finmanp {
         ~Ledger();
 
         int addTransaction(const std::shared_ptr<Transaction>& transaction);
-        int addTransaction(const float amount, const Transaction::Type type);
+        int addTransaction(const Money& amount, const Transaction::Type type);
 
     private:
 

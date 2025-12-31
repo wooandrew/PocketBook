@@ -15,6 +15,8 @@
 
 namespace arcxh::finmanp {
 
+    Money::Money() : Money(0, 0) { }
+
     Money::Money(int unit, int nano) : 
         unit(unit), 
         nano(nano) 

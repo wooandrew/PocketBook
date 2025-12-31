@@ -5,9 +5,14 @@
 #include "receipt.hpp"
 
 // stdlib
+#include <string>
+#include <chrono>
+#include <vector>
+#include <utility>
 
 // arcxhlib
 #include "arcxh.hpp"
+#include "money.hpp"
 
 namespace arcxh::finmanp {
 
@@ -17,43 +22,43 @@ namespace arcxh::finmanp {
         ymd = std::chrono::floor<std::chrono::days>(std::chrono::system_clock::now());
     }
 
-    Receipt::Receipt(const std::string& vendor, const std::chrono::year_month_day ymd) {
+    Receipt::Receipt(const std::string& vendor, const std::chrono::year_month_day ymd) :
+        vendor(vendor),
+        ymd(ymd),
+        subtotal(Money{0, 0}),
+        tax(Money{0, 0}),
+        tip(Money{0, 0})
+    {
 
-        this->vendor = vendor;
-        this->ymd = ymd;
-
-        subtotal = 0.0F;
-        tax = 0.0F;
-        tip = 0.0F;
     }
 
     Receipt::~Receipt() {
 
     };
 
-    int Receipt::addItem(const std::string& item, const float cost) {
+    int Receipt::addItem(const std::string& item, const Money& cost) {
         items.push_back(std::make_pair(item, cost));
         subtotal += cost;
         return ARCXH_SUCCESS;
     }
 
-    int Receipt::addDiscount(const std::string& discount, const float amount) {
+    int Receipt::addDiscount(const std::string& discount, const Money& amount) {
         discounts.push_back(std::make_pair(discount, amount));
         subtotal -= amount;
         return ARCXH_SUCCESS;
     }
 
-    int Receipt::setTax(const float tax) {
+    int Receipt::setTax(const Money& tax) {
         this->tax = tax;
         return ARCXH_SUCCESS;
     }
 
-    int Receipt::setTip(const float tip) {
+    int Receipt::setTip(const Money& tip) {
         this->tip = tip;
         return ARCXH_SUCCESS;
     }
 
-    float Receipt::getTotal() const {
+    Money Receipt::getTotal() const {
         return subtotal + tax + tip;
     }
 
@@ -61,11 +66,11 @@ namespace arcxh::finmanp {
 
         vendor = "";
 
-        items = std::vector<std::pair<std::string, float>>();
-        discounts = std::vector<std::pair<std::string, float>>();
+        items = std::vector<std::pair<std::string, Money>>();
+        discounts = std::vector<std::pair<std::string, Money>>();
 
-        subtotal = 0.0F;
-        tax = 0.0F;
-        tip = 0.0F;
+        subtotal = Money{0, 0};
+        tax = Money{0, 0};
+        tip = Money{0, 0};
     }
 }
