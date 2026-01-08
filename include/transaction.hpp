@@ -1,5 +1,5 @@
 // finmanp - transaction.hpp
-// Copyright (c) 2025 Andrew Woo
+// Copyright (c) 2025 - present <> Andrew Woo
 
 #ifndef ARCXH_FINMANP_TRANSACTION
 #define ARCXH_FINMANP_TRANSACTION

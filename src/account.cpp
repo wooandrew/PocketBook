@@ -1,5 +1,5 @@
 // finmanp - account.cpp
-// Copyright (c) 2025 Andrew Woo
+// Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
 #include "account.hpp"
@@ -18,9 +18,10 @@ namespace arcxh::finmanp {
 
     Account::Account(const std::string& name, const Money&balance) :
         name(name),
-        balance(balance)
+        balance(balance),
+        ledger(std::make_shared<Ledger>())
     {
-        ledger = std::make_shared<Ledger>();
+
     };
 
     Account::~Account() {

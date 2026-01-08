@@ -1,5 +1,5 @@
 // finmanp - receipt.cpp
-// Copyright (c) 2025 Andrew Woo
+// Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
 #include "receipt.hpp"

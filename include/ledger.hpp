@@ -1,5 +1,5 @@
 // finmanp - ledger.hpp
-// Copyright (c) 2025 Andrew Woo
+// Copyright (c) 2025 - present <> Andrew Woo
 
 #ifndef ARCXH_FINMANP_LEDGER
 #define ARCXH_FINMANP_LEDGER
