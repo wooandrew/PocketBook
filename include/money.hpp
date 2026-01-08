@@ -1,5 +1,5 @@
 // finmanp - money.hpp
-// Copyright (c) 2025 Andrew Woo
+// Copyright (c) 2025 - present <> Andrew Woo
 
 #ifndef ARCXH_FINMANP_MONEY
 #define ARCXH_FINMANP_MONEY
@@ -20,6 +20,11 @@ namespace arcxh::finmanp {
         ~Money();
 
         static std::string MoneyAsString(const Money& m, const int decimals=2);
+        static Money StringAsMoney(const std::string& s);
+
+        // Setters
+        int setUnit(const int unit);
+        int setNano(const int nano);
 
         // Arithmetic operators
         Money& operator+=(const Money& m);          // Add-equals

@@ -1,5 +1,5 @@
 // finmanp - money.cpp
-// Copyright (c) 2025 Andrew Woo
+// Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
 #include "money.hpp"
@@ -11,6 +11,7 @@
 
 // arcxhlib
 #include "arcxh.hpp"
+#include "common.hpp"
 
 
 namespace arcxh::finmanp {
@@ -41,6 +42,34 @@ namespace arcxh::finmanp {
         }
 
         return std::format("{}{}.{:0{}}", isNegative, absUnit, absNano / divisor, decimals);
+    }
+
+    Money Money::StringAsMoney(const std::string& s) {
+
+        std::vector<std::string> tokens = tokenize(s, '.');
+
+        Money m;
+        m.setUnit(std::stoi(tokens[0]));
+
+        long long divisor = 1;
+        for (int i = 0; i < tokens[1].size(); ++i) {
+            divisor *= 10;
+        }
+
+        m.setNano(std::stoi(tokens[1]) * (NANO_BASE / divisor));
+        std::cout << m.nano << std::endl;
+
+        return m;
+    }
+
+    int Money::setUnit(const int unit) {
+        this->unit = unit;
+        return ARCXH_SUCCESS;
+    }
+
+    int Money::setNano(const int nano) {
+        this->nano = nano;
+        return ARCXH_SUCCESS;
     }
 
     void Money::normalize() {

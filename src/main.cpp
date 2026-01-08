@@ -29,8 +29,10 @@ int main(int argc, char* argv[]) {
     arcxh::finmanp::Money m1(2, 750000000);
     arcxh::finmanp::Money m2(3, 250000000);
     arcxh::finmanp::Money m3 = m1 + m2;
+    arcxh::finmanp::Money m4 = arcxh::finmanp::Money::StringAsMoney("2.751");
 
     std::cout << arcxh::finmanp::Money::MoneyAsString(m3) << std::endl;
+    std::cout << arcxh::finmanp::Money::MoneyAsString(m4, 3) << std::endl;
 
     std::map<std::string, std::shared_ptr<arcxh::finmanp::Account>> accounts;
     accounts["Savings"] = std::make_shared<arcxh::finmanp::Account>("Savings", arcxh::finmanp::Money{0, 0});
