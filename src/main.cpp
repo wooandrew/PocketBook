@@ -1,5 +1,5 @@
 // finmanp - an mServArcxh microservice
-// Copyright (c) 2025 Andrew Woo
+// Copyright (c) 2025 - present <> Andrew Woo
 
 // stdlib
 #include <iostream>
@@ -17,21 +17,10 @@
 #include <proto/transaction.h>
 
 // arcxhlib
+#include "common.hpp"
 #include "money.hpp"
 #include "account.hpp"
 #include "transaction.hpp"
-
-std::vector<std::string> tokenize(const std::string& input, const char delimiter) {
-
-    std::vector<std::string> tokens;
-    std::string token;
-
-    std::istringstream iss(input);
-    while (std::getline(iss, token, delimiter))
-        tokens.push_back(token);
-
-    return tokens;
-}
 
 int main(int argc, char* argv[]) {
 

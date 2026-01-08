@@ -3,6 +3,7 @@
 add_executable(finmanp
     main.cpp
 
+    common.cpp
     account.cpp
     ledger.cpp
     money.cpp
