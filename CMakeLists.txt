@@ -14,8 +14,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(FetchContent)
 set(FETCHCONTENT_QUIET OFF)
 
+set(BUILD_TESTING OFF CACHE BOOL "" FORCE)  # Disable build testing
+
 # Add gRPC
 set(ABSL_ENABLE_INSTALL ON CACHE BOOL "" FORCE)                 # Install ABSL (Abseil)
+set(ABSL_BUILD_TESTING OFF CACHE BOOL "" FORCE)                 # Disable ABSL build tests
+set(gRPC_BUILD_TESTS OFF CACHE BOOL "" FORCE)                   # Disable gRPC build tests
 set(gRPC_BUILD_GRPC_CPP_PLUGIN_TARGET ON CACHE BOOL "" FORCE)   # Build grpc_cpp_plugin as target
 set(gRPC_INSTALL OFF CACHE BOOL "" FORCE)
 
