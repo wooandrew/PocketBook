@@ -1,23 +1,5 @@
 # src/CMakeLists.txt
 
-# === finmanp library === =========================================================================
-add_library(finlib STATIC
-    common.cpp
-
-    account.cpp
-    ledger.cpp
-    money.cpp
-    receipt.cpp
-    transaction.cpp
-    server.cpp
-)
-
-target_include_directories(finlib PUBLIC ${PROJECT_SOURCE_DIR}/include)
-target_include_directories(finlib PUBLIC ${PROJECT_SOURCE_DIR}/proto)
-
-target_link_libraries(finlib PUBLIC protolib)
-# === =============================================================================================
-
 # === Main Server Application === =================================================================
 add_executable(finmanp
     main.cpp
