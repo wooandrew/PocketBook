@@ -1,5 +1,25 @@
 // Transaction Protocol
 syntax = "proto3";
 
+message Money {
+    int64 units = 1;
+    int32 nanos = 2;
+}
 
+message NewTransactionRequest {
+    Money amount = 1;
+    string account = 2;
+}
 
+message NewTransactionResponse {
+    enum Status {
+        OK = 0;
+        FAILURE = 1;
+    }
+    Status status = 1;
+    string transaction_id = 2;
+}
+
+service Transaction {
+    rpc NewTransaction(NewTransactionRequest) returns (NewTransactionResponse) {}
+}

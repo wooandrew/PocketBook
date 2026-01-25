@@ -1,0 +1,28 @@
+// Server Protocol
+syntax = "proto3";
+
+enum Status {
+    OK = 0;
+    FAILURE = 1;
+}
+
+message ConnectRequest {
+    string ConnectMessage = 1;
+}
+
+message ConnectResponse {
+    Status status = 1;
+}
+
+message DisconnectRequest {
+    string DisconnectMessage = 1;
+}
+
+message DisconnectResponse {
+    Status status = 1;
+}
+
+service ServerProto {
+    rpc Connect(ConnectRequest) returns (ConnectResponse) {}
+    rpc Disconnect(DisconnectRequest) returns (DisconnectResponse) {}
+}
