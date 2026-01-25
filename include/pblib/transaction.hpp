@@ -1,19 +1,19 @@
-// finmanp - transaction.hpp
+// pocketbook - transaction.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef ARCXH_FINMANP_TRANSACTION
-#define ARCXH_FINMANP_TRANSACTION
+#ifndef POCKETBOOK_TRANSACTION
+#define POCKETBOOK_TRANSACTION
 
 // stdlib
 #include <memory>
 #include <string>
 #include <chrono>
 
-// arcxhlib
-#include <finlib/money.hpp>
-#include <finlib/receipt.hpp>
+// pblib
+#include <pblib/money.hpp>
+#include <pblib/receipt.hpp>
 
-namespace arcxh::finmanp {
+namespace pocketbook {
 
     class Account;      // Forward Declaration
 
@@ -68,4 +68,4 @@ namespace arcxh::finmanp {
     };
 }
 
-#endif // !ARCXH_FINMANP_TRANSACTION
+#endif // !POCKETBOOK_TRANSACTION

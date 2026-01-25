@@ -1,15 +1,15 @@
-// finmanp - money.hpp
+// pocketbook - money.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef ARCXH_FINMANP_MONEY
-#define ARCXH_FINMANP_MONEY
+#ifndef POCKETBOOK_MONEY
+#define POCKETBOOK_MONEY
 
 // stdlib
 #include <string>
 
-// arcxhlib
+// pblib
 
-namespace arcxh::finmanp {
+namespace pocketbook {
     
     class Money {
 
@@ -53,4 +53,4 @@ namespace arcxh::finmanp {
     };
 }
 
-#endif // !ARCXH_FINMANP_MONEY
+#endif // !POCKETBOOK_MONEY

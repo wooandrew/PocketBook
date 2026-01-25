@@ -1,4 +1,4 @@
-// finmanp - server.cpp
+// pocketbook - server.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
@@ -10,13 +10,13 @@
 // extlib
 #include <grpcpp/grpcpp.h>
 
+// pblib
+
 // protolib
 #include <proto/service.h>
 #include <proto/transaction.h>
 
-// arcxhlib
-
-namespace arcxh::finmanp {
+namespace pocketbook {
 
     Server::~Server() {
         server->Shutdown();

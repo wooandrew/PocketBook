@@ -1,23 +1,23 @@
 # src/CMakeLists.txt
 
 add_subdirectory(arcxh)
-add_subdirectory(finlib)
+add_subdirectory(pblib)
 add_subdirectory(proto)
 
 # === Main Server Application === =================================================================
-add_executable(finmanp
+add_executable(pocketbook
     main.cpp
 )
 
 # Set output directory
-set_target_properties(finmanp PROPERTIES
+set_target_properties(pocketbook PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin
 )
 
 # Link Libraries
-target_link_libraries(finmanp PRIVATE arcxhlib)
-target_link_libraries(finmanp PRIVATE finlib)
-target_link_libraries(finmanp PRIVATE protolib)
+target_link_libraries(pocketbook PRIVATE arcxhlib)
+target_link_libraries(pocketbook PRIVATE pblib)
+target_link_libraries(pocketbook PRIVATE protolib)
 # === =============================================================================================
 
 # === Test Client Application === =================================================================
@@ -31,7 +31,7 @@ set_target_properties(client PROPERTIES
 )
 
 # Link Libraries
-target_link_libraries(client PRIVATE finlib)
+target_link_libraries(client PRIVATE pblib)
 target_link_libraries(client PRIVATE protolib)
 # === =============================================================================================
 
@@ -47,5 +47,5 @@ set_target_properties(unittest PROPERTIES
 
 # Link Libraries
 target_link_libraries(unittest PRIVATE arcxhlib)
-target_link_libraries(unittest PRIVATE finlib)
+target_link_libraries(unittest PRIVATE pblib)
 target_link_libraries(unittest PRIVATE protolib)

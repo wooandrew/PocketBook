@@ -21,4 +21,4 @@ RUN cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 RUN cmake --build build --config Release
 
 # Default command (optional)
-CMD ["./bin/finmanp"]
+CMD ["./bin/pocketbook"]

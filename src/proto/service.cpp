@@ -1,4 +1,4 @@
-// finmanp - proto/server.cpp
+// pocketbook - proto/server.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
@@ -10,9 +10,9 @@
 // extlib
 #include <grpcpp/grpcpp.h>
 
-// arcxhlib
+// pblib
     
-namespace arcxh::finmanp::proto {
+namespace pocketbook::proto {
 
     grpc::Status ServerImpl::Connect(grpc::ServerContext* context,
         const ::ConnectRequest* request, ::ConnectResponse* response)

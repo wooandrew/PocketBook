@@ -1,8 +1,8 @@
-// finmanp - transaction.cpp
+// pocketbook - transaction.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include <finlib/transaction.hpp>
+#include <pblib/transaction.hpp>
 
 // stdlib
 #include <string>
@@ -10,9 +10,11 @@
 
 // arcxhlib
 #include <arcxh/arcxh.hpp>
-#include <finlib/money.hpp>
 
-namespace arcxh::finmanp {
+// pblib
+#include <pblib/money.hpp>
+
+namespace pocketbook {
 
     Transaction::Type Transaction::typeFromStr(const std::string& str) {
 

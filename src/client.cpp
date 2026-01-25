@@ -1,4 +1,4 @@
-// finmanp - client.cpp
+// pocketbook - client.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // stdlib

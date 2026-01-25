@@ -1,4 +1,4 @@
-// finmanp - common.cpp
+// pocketbook - common.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header

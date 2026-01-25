@@ -1,18 +1,18 @@
-// finmanp - account.cpp
+// pocketbook - account.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include <finlib/account.hpp>
+#include <pblib/account.hpp>
 
 // stdlib
 #include <iostream>
 #include <iomanip>
 #include <sstream>
 
-// arcxhlib
+// arxchlib
 #include <arcxh/arcxh.hpp>
 
-namespace arcxh::finmanp {
+namespace pocketbook {
 
     Account::Account(const std::string& name) : Account(name, Money{0, 0}) { };
 

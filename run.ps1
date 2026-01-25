@@ -11,7 +11,7 @@ param(
 
 $buildDir   = "build/$Config"
 $binDir     = "bin/$Config"
-$executable = "finmanp.exe"
+$executable = "pocketbook.exe"
 $client     = "client.exe"
 
 function Clean {

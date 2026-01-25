@@ -1,8 +1,8 @@
-// finmanp - receipt.cpp
+// pocketbook - receipt.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include <finlib/receipt.hpp>
+#include <pblib/receipt.hpp>
 
 // stdlib
 #include <string>
@@ -12,9 +12,11 @@
 
 // arcxhlib
 #include <arcxh/arcxh.hpp>
-#include <finlib/money.hpp>
 
-namespace arcxh::finmanp {
+// pblib
+#include <pblib/money.hpp>
+
+namespace pocketbook {
 
     Receipt::Receipt() {
 

@@ -1,18 +1,18 @@
-// finmanp - ledger.hpp
+// pocketbook - ledger.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef ARCXH_FINMANP_LEDGER
-#define ARCXH_FINMANP_LEDGER
+#ifndef POCKETBOOK_LEDGER
+#define POCKETBOOK_LEDGER
 
 // stdlib
 #include <vector>
 #include <memory>
 
-// arcxhlib
-#include <finlib/money.hpp>
-#include <finlib/transaction.hpp>
+// pblib
+#include <pblib/money.hpp>
+#include <pblib/transaction.hpp>
 
-namespace arcxh::finmanp {
+namespace pocketbook {
 
     class Ledger {
 

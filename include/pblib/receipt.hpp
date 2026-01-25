@@ -1,8 +1,8 @@
-// finmanp - receipt.hpp
+// pocketbook - receipt.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef ARCXH_FINMANP_RECEIPT
-#define ARCXH_FINMANP_RECEIPT
+#ifndef POCKETBOOK_RECEIPT
+#define POCKETBOOK_RECEIPT
 
 // stdlib
 #include <string>
@@ -10,10 +10,10 @@
 #include <vector>
 #include <utility>
 
-// arcxhlib
-#include <finlib/money.hpp>
+// pblib
+#include <pblib/money.hpp>
 
-namespace arcxh::finmanp {
+namespace pocketbook {
 
     class Receipt {
 
@@ -50,4 +50,4 @@ namespace arcxh::finmanp {
     };
 }
 
-#endif // !ARCXH_FINMANP_RECEIPT
+#endif // !POCKETBOOK_RECEIPT

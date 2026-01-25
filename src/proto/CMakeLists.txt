@@ -9,7 +9,7 @@ add_library(protolib STATIC
 
 target_link_libraries(protolib 
     PUBLIC protogen
-    PRIVATE finlib
+    PRIVATE pblib
 )
 
 target_include_directories(protolib PUBLIC ${PROJECT_SOURCE_DIR}/include)

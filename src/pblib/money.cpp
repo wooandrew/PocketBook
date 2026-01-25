@@ -1,8 +1,8 @@
-// finmanp - money.cpp
+// pocketbook - money.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include <finlib/money.hpp>
+#include <pblib/money.hpp>
 
 // stdlib
 #include <iostream>
@@ -14,7 +14,7 @@
 #include <arcxh/common.hpp>
 
 
-namespace arcxh::finmanp {
+namespace pocketbook {
 
     Money::Money() : Money(0, 0) { }
 

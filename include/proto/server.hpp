@@ -1,8 +1,8 @@
-// finmanp - server.hpp
+// proto - server.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef ARCXH_FINMANP_SERVER
-#define ARCXH_FINMANP_SERVER
+#ifndef POCKETBOOK_SERVER
+#define POCKETBOOK_SERVER
 
 // stdlib
 #include <iostream>
@@ -10,14 +10,15 @@
 
 // extlib
 
-// protolib
-#include <proto/service.h>
-
 // arcxhlib
 #include <arcxh/arcxh.hpp>
 
+// pblib
 
-namespace arcxh::finmanp {
+// protolib
+#include <proto/service.h>
+
+namespace pocketbook {
 
     class Server {
     
@@ -32,4 +33,4 @@ namespace arcxh::finmanp {
     };
 }
 
-#endif // !ARCXH_FINMANP_SERVER
+#endif // !POCKETBOOK_SERVER

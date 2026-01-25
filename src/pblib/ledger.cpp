@@ -1,8 +1,8 @@
-// finmanp - ledger.cpp
+// pocketbook - ledger.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include <finlib/ledger.hpp>
+#include <pblib/ledger.hpp>
 
 // stdlib
 #include <vector>
@@ -11,7 +11,7 @@
 // arcxhlib
 #include <arcxh/arcxh.hpp>
 
-namespace arcxh::finmanp {
+namespace pocketbook {
 
     Ledger::Ledger() {
 

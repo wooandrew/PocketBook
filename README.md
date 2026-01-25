@@ -1,1 +1,1 @@
-# mServArcxh: finmanp - Financial Management Platform
+# mServArcxh: pocketbook - Financial Management Platform

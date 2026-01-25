@@ -1,8 +1,8 @@
-// finmanp - common.hpp
+// arcxh - common.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef ARCXH_FINMANP_COMMON
-#define ARCXH_FINMANP_COMMON
+#ifndef POCKETBOOK_COMMON
+#define POCKETBOOK_COMMON
 
 // stdlib
 #include <vector>
@@ -10,4 +10,4 @@
 
 std::vector<std::string> tokenize(const std::string& input, const char delimiter);
 
-#endif // !ARCXH_FINMANP_COMMON
+#endif // !POCKETBOOK_COMMON

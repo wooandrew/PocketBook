@@ -1,4 +1,4 @@
-// finmanp - proto/server.h
+// proto - server.h
 // Copyright (c) 2025 - present <> Andrew Woo
 
 #ifndef PROTO_SERVER_H
@@ -7,7 +7,7 @@
 #include <server.pb.h>
 #include <server.grpc.pb.h>
 
-namespace arcxh::finmanp::proto {
+namespace pocketbook::proto {
  
     class ServerImpl final : public ServerProto::Service {
 
