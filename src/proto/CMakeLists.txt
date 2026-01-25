@@ -1,7 +1,15 @@
+# src/proto/CMakeLists.txt
+
 # PROTOLIB
 add_library(protolib STATIC
-    "proto/server.cpp"      "proto/server.h"
+    "service.cpp"
+    "server.cpp"
     # "proto/transaction.cpp" "proto/transaction.h"
 )
 
-target_link_libraries(protolib PUBLIC protogen)
+target_link_libraries(protolib 
+    PUBLIC protogen
+    PRIVATE finlib
+)
+
+target_include_directories(protolib PUBLIC ${PROJECT_SOURCE_DIR}/include)

@@ -1,6 +1,6 @@
 # root CMakeLists.txt
-# Project configuration
 
+# Project configuration
 cmake_minimum_required(VERSION 3.15)
 
 # Project name and language

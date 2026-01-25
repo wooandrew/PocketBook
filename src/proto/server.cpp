@@ -1,8 +1,8 @@
-// finmanp - proto/server.cpp
+// finmanp - server.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include "server.h"
+#include <proto/server.hpp>
 
 // stdlib
 #include <string>
@@ -10,31 +10,25 @@
 // extlib
 #include <grpcpp/grpcpp.h>
 
+// protolib
+#include <proto/service.h>
+#include <proto/transaction.h>
+
 // arcxhlib
-    
-namespace arcxh::finmanp::proto {
 
-    grpc::Status ServerImpl::Connect(grpc::ServerContext* context,
-        const ::ConnectRequest* request, ::ConnectResponse* response)
-    {
-        std::string ConnectMessage = request->connectmessage();
+namespace arcxh::finmanp {
 
-        std::cout << "[Server] Connection request received: " << ConnectMessage << std::endl;
-
-        response->set_status(::Status::OK);
-
-        return grpc::Status::OK;
+    Server::~Server() {
+        server->Shutdown();
     }
 
-    grpc::Status ServerImpl::Disconnect(grpc::ServerContext* context,
-        const ::DisconnectRequest* request, ::DisconnectResponse* response)
-    {
-        std::string DisconnectMessage = request->disconnectmessage();
+    void Server::init() {
+        proto::ServerImpl service;
+        grpc::ServerBuilder builder;
+        builder.AddListeningPort("127.0.0.1:29800", grpc::InsecureServerCredentials());
+        builder.RegisterService(&service);
 
-        std::cout << "[Server] Disconnect request received: " << DisconnectMessage << std::endl;
-
-        response->set_status(::Status::OK);
-
-        return grpc::Status::OK;
+        server = builder.BuildAndStart();
+        server->Wait();
     }
 }

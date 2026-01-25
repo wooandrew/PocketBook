@@ -2,7 +2,7 @@
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include "receipt.hpp"
+#include <finlib/receipt.hpp>
 
 // stdlib
 #include <string>
@@ -11,8 +11,8 @@
 #include <utility>
 
 // arcxhlib
-#include "arcxh.hpp"
-#include "money.hpp"
+#include <arcxh/arcxh.hpp>
+#include <finlib/money.hpp>
 
 namespace arcxh::finmanp {
 

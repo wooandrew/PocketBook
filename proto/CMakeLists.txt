@@ -9,27 +9,15 @@ add_library(protogen STATIC
     transaction.proto
 )
 
-target_link_libraries(protogen PUBLIC
-    grpc++
-    libprotobuf
-)
+target_link_libraries(protogen PUBLIC grpc++ libprotobuf)
 
 # Generate Standard Protobuf Code
-protobuf_generate(
-    TARGET protogen
-    LANGUAGE cpp
-    PROTOC_OUT_DIR "${CMAKE_CURRENT_BINARY_DIR}"
-)
+protobuf_generate(TARGET protogen LANGUAGE cpp PROTOC_OUT_DIR "${CMAKE_CURRENT_BINARY_DIR}")
 
 # Generate gRPC Protobuf Code
-protobuf_generate(
-    TARGET protogen
-    LANGUAGE grpc
-    GENERATE_EXTENSIONS .grpc.pb.h .grpc.pb.cc
+protobuf_generate(TARGET protogen LANGUAGE grpc GENERATE_EXTENSIONS .grpc.pb.h .grpc.pb.cc
     PLUGIN "protoc-gen-grpc=$<TARGET_FILE:grpc_cpp_plugin>"
     PROTOC_OUT_DIR "${CMAKE_CURRENT_BINARY_DIR}"
 )
 
-target_include_directories(protogen PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
-)
+target_include_directories(protogen PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>)

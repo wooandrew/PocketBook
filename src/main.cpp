@@ -8,11 +8,11 @@
 #include <grpcpp/grpcpp.h>
 
 // protolib
-#include <proto/server.h>
+#include <proto/service.h>
 #include <proto/transaction.h>
 
 // arcxhlib
-#include "server.hpp"
+#include <proto/server.hpp>
 
 int main(int argc, char* argv[]) {
 

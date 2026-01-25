@@ -11,7 +11,7 @@
 #include <utility>
 
 // arcxhlib
-#include "money.hpp"
+#include <finlib/money.hpp>
 
 namespace arcxh::finmanp {
 

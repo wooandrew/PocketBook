@@ -2,15 +2,15 @@
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include "transaction.hpp"
+#include <finlib/transaction.hpp>
 
 // stdlib
 #include <string>
 #include <chrono>
 
 // arcxhlib
-#include "arcxh.hpp"
-#include "money.hpp"
+#include <arcxh/arcxh.hpp>
+#include <finlib/money.hpp>
 
 namespace arcxh::finmanp {
 

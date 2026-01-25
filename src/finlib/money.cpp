@@ -2,7 +2,7 @@
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include "money.hpp"
+#include <finlib/money.hpp>
 
 // stdlib
 #include <iostream>
@@ -10,8 +10,8 @@
 #include <string>
 
 // arcxhlib
-#include "arcxh.hpp"
-#include "common.hpp"
+#include <arcxh/arcxh.hpp>
+#include <arcxh/common.hpp>
 
 
 namespace arcxh::finmanp {

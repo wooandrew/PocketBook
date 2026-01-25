@@ -9,8 +9,8 @@
 #include <memory>
 
 // arcxhlib
-#include "money.hpp"
-#include "transaction.hpp"
+#include <finlib/money.hpp>
+#include <finlib/transaction.hpp>
 
 namespace arcxh::finmanp {
 

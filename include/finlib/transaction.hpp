@@ -10,8 +10,8 @@
 #include <chrono>
 
 // arcxhlib
-#include "money.hpp"
-#include "receipt.hpp"
+#include <finlib/money.hpp>
+#include <finlib/receipt.hpp>
 
 namespace arcxh::finmanp {
 

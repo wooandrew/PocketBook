@@ -10,7 +10,7 @@
 #include <grpcpp/grpcpp.h>
 
 // protolib
-#include <proto/server.h>
+#include <proto/service.h>
 
 
 int main(int argc, char* argv[]) {

@@ -2,7 +2,7 @@
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include "account.hpp"
+#include <finlib/account.hpp>
 
 // stdlib
 #include <iostream>
@@ -10,7 +10,7 @@
 #include <sstream>
 
 // arcxhlib
-#include "arcxh.hpp"
+#include <arcxh/arcxh.hpp>
 
 namespace arcxh::finmanp {
 

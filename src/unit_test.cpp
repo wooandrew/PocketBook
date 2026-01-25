@@ -14,14 +14,14 @@
 #include <grpcpp/grpcpp.h>
 
 // protolib
-#include <proto/server.h>
+#include <proto/service.h>
 #include <proto/transaction.h>
 
 // arcxhlib
-#include "common.hpp"
-#include "money.hpp"
-#include "account.hpp"
-#include "transaction.hpp"
+#include <arcxh/common.hpp>
+#include <finlib/money.hpp>
+#include <finlib/account.hpp>
+#include <finlib/transaction.hpp>
 
 int main(int argc, char* argv[]) {
 

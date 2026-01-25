@@ -11,10 +11,10 @@
 // extlib
 
 // protolib
-#include <proto/server.h>
+#include <proto/service.h>
 
 // arcxhlib
-#include "arcxh.hpp"
+#include <arcxh/arcxh.hpp>
 
 
 namespace arcxh::finmanp {

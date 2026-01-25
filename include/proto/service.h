@@ -4,8 +4,8 @@
 #ifndef PROTO_SERVER_H
 #define PROTO_SERVER_H
 
-#include "server.pb.h"
-#include "server.grpc.pb.h"
+#include <server.pb.h>
+#include <server.grpc.pb.h>
 
 namespace arcxh::finmanp::proto {
  

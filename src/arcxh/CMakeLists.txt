@@ -1,5 +1,7 @@
-# === finmanp library === =========================================================================
-add_library(arcxh STATIC
+# src/arcxh/CMakeLists.txt
+
+add_library(arcxhlib STATIC
     "common.cpp"
 )
-# === =============================================================================================
+
+target_include_directories(arcxhlib PUBLIC ${PROJECT_SOURCE_DIR}/include)

@@ -2,7 +2,7 @@
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include "common.hpp"
+#include <arcxh/common.hpp>
 
 // stdlib
 #include <vector>

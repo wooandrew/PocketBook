@@ -8,10 +8,10 @@
 #include <string>
 
 // arcxhlib
-#include "money.hpp"
-#include "ledger.hpp"
-#include "serialize.hpp"
-#include "transaction.hpp"
+#include <finlib/money.hpp>
+#include <finlib/ledger.hpp>
+#include <finlib/serialize.hpp>
+#include <finlib/transaction.hpp>
 
 namespace arcxh::finmanp {
 
