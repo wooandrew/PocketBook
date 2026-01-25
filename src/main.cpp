@@ -18,7 +18,7 @@
 
 int main(int argc, char* argv[]) {
 
-    std::cout << "Started FINMANP Server" << std::endl;
+    std::cout << "Started POCKETBOOK Server" << std::endl;
 
     pocketbook::Server server;
     server.init();
