@@ -1,8 +1,8 @@
-// pocketbook - receipt.hpp
+// pblib/receipt.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef POCKETBOOK_RECEIPT
-#define POCKETBOOK_RECEIPT
+#ifndef POCKETBOOK_RECEIPT_HPP
+#define POCKETBOOK_RECEIPT_HPP
 
 // stdlib
 #include <string>
@@ -50,4 +50,4 @@ namespace pocketbook {
     };
 }
 
-#endif // !POCKETBOOK_RECEIPT
+#endif // !POCKETBOOK_RECEIPT_HPP

@@ -22,7 +22,7 @@ message DisconnectResponse {
     Status status = 1;
 }
 
-service ServerProto {
+service ServiceProto {
     rpc Connect(ConnectRequest) returns (ConnectResponse) {}
     rpc Disconnect(DisconnectRequest) returns (DisconnectResponse) {}
 }

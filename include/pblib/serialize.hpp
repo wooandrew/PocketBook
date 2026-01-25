@@ -1,8 +1,8 @@
-// pocketbook - serialize.hpp
+// pblib/serialize.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef POCKETBOOK_SERIALIZE
-#define POCKETBOOK_SERIALIZE
+#ifndef POCKETBOOK_SERIALIZE_HPP
+#define POCKETBOOK_SERIALIZE_HPP
 
 namespace pocketbook {
 
@@ -15,4 +15,4 @@ namespace pocketbook {
     };
 }
 
-#endif // !POCKETBOOK_SERIALIZE
+#endif // !POCKETBOOK_SERIALIZE_HPP

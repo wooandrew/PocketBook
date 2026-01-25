@@ -1,15 +1,15 @@
-// proto - server.h
+// proto/service.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef PROTO_SERVER_H
-#define PROTO_SERVER_H
+#ifndef PROTO_SERVICE_HPP
+#define PROTO_SERVICE_HPP
 
-#include <server.pb.h>
-#include <server.grpc.pb.h>
+#include <service.pb.h>
+#include <service.grpc.pb.h>
 
 namespace pocketbook::proto {
  
-    class ServerImpl final : public ServerProto::Service {
+    class ServiceImpl final : public ServiceProto::Service {
 
     public:
 
@@ -25,4 +25,4 @@ namespace pocketbook::proto {
 
 }
 
-#endif // !PROTO_SERVER_H
+#endif // !PROTO_SERVICE_HPP

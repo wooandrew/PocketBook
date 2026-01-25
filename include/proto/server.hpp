@@ -1,8 +1,8 @@
-// proto - server.hpp
+// proto/server.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef POCKETBOOK_SERVER
-#define POCKETBOOK_SERVER
+#ifndef POCKETBOOK_SERVER_HPP
+#define POCKETBOOK_SERVER_HPP
 
 // stdlib
 #include <iostream>
@@ -16,7 +16,7 @@
 // pblib
 
 // protolib
-#include <proto/service.h>
+#include <proto/service.hpp>
 
 namespace pocketbook {
 
@@ -24,13 +24,12 @@ namespace pocketbook {
     
     public:
 
-        ~Server();
-
         void init();
+        void shutdown();
         
     private:
         std::unique_ptr<grpc::Server> server;
     };
 }
 
-#endif // !POCKETBOOK_SERVER
+#endif // !POCKETBOOK_SERVER_HPP

@@ -13,22 +13,22 @@
 // pblib
 
 // protolib
-#include <proto/service.h>
-#include <proto/transaction.h>
+#include <proto/service.hpp>
+#include <proto/transaction.hpp>
 
 namespace pocketbook {
 
-    Server::~Server() {
-        server->Shutdown();
-    }
-
     void Server::init() {
-        proto::ServerImpl service;
+        proto::ServiceImpl service;
         grpc::ServerBuilder builder;
         builder.AddListeningPort("127.0.0.1:29800", grpc::InsecureServerCredentials());
         builder.RegisterService(&service);
 
         server = builder.BuildAndStart();
         server->Wait();
+    }
+
+    void Server::shutdown() {
+        server->Shutdown();
     }
 }

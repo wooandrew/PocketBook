@@ -2,7 +2,7 @@
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
-#include <proto/service.h>
+#include <proto/service.hpp>
 
 // stdlib
 #include <string>
@@ -14,7 +14,7 @@
     
 namespace pocketbook::proto {
 
-    grpc::Status ServerImpl::Connect(grpc::ServerContext* context,
+    grpc::Status ServiceImpl::Connect(grpc::ServerContext* context,
         const ::ConnectRequest* request, ::ConnectResponse* response)
     {
         std::string ConnectMessage = request->connectmessage();
@@ -26,7 +26,7 @@ namespace pocketbook::proto {
         return grpc::Status::OK;
     }
 
-    grpc::Status ServerImpl::Disconnect(grpc::ServerContext* context,
+    grpc::Status ServiceImpl::Disconnect(grpc::ServerContext* context,
         const ::DisconnectRequest* request, ::DisconnectResponse* response)
     {
         std::string DisconnectMessage = request->disconnectmessage();

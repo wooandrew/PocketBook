@@ -5,7 +5,7 @@ include(${grpc_SOURCE_DIR}/third_party/protobuf/cmake/protobuf-generate.cmake)
 
 # Generate Protobufs
 add_library(protogen STATIC
-    server.proto    
+    service.proto    
     transaction.proto
 )
 

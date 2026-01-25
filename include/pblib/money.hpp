@@ -1,8 +1,8 @@
-// pocketbook - money.hpp
+// pblib/money.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef POCKETBOOK_MONEY
-#define POCKETBOOK_MONEY
+#ifndef POCKETBOOK_MONEY_HPP
+#define POCKETBOOK_MONEY_HPP
 
 // stdlib
 #include <string>
@@ -53,4 +53,4 @@ namespace pocketbook {
     };
 }
 
-#endif // !POCKETBOOK_MONEY
+#endif // !POCKETBOOK_MONEY_HPP

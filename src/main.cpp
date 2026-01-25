@@ -12,9 +12,9 @@
 // pblib
 
 // protolib
-#include <proto/service.h>
+#include <proto/service.hpp>
 #include <proto/server.hpp>
-#include <proto/transaction.h>
+#include <proto/transaction.hpp>
 
 int main(int argc, char* argv[]) {
 

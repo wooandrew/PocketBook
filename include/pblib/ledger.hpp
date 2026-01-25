@@ -1,8 +1,8 @@
-// pocketbook - ledger.hpp
+// pblib/ledger.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef POCKETBOOK_LEDGER
-#define POCKETBOOK_LEDGER
+#ifndef POCKETBOOK_LEDGER_HPP
+#define POCKETBOOK_LEDGER_HPP
 
 // stdlib
 #include <vector>
@@ -30,4 +30,4 @@ namespace pocketbook {
     };
 }
 
-#endif // !ARCXH_FINMAP_LEDGER
+#endif // !ARCXH_FINMAP_LEDGER_HPP

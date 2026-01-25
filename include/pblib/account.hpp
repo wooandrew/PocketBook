@@ -1,8 +1,8 @@
-// pocketbook - account.hpp
+// pblib/account.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef POCKETBOOK_ACCOUNT
-#define POCKETBOOK_ACCOUNT
+#ifndef POCKETBOOK_ACCOUNT_HPP
+#define POCKETBOOK_ACCOUNT_HPP
 
 // stdlib
 #include <string>
@@ -52,4 +52,4 @@ namespace pocketbook {
     };
 }
 
-#endif // !POCKETBOOK_ACCOUNT
+#endif // !POCKETBOOK_ACCOUNT_HPP

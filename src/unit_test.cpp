@@ -22,8 +22,8 @@
 #include <pblib/transaction.hpp>
 
 // protolib
-#include <proto/service.h>
-#include <proto/transaction.h>
+#include <proto/service.hpp>
+#include <proto/transaction.hpp>
 
 int main(int argc, char* argv[]) {
 

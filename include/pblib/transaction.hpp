@@ -1,8 +1,8 @@
-// pocketbook - transaction.hpp
+// pblib/transaction.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef POCKETBOOK_TRANSACTION
-#define POCKETBOOK_TRANSACTION
+#ifndef POCKETBOOK_TRANSACTION_HPP
+#define POCKETBOOK_TRANSACTION_HPP
 
 // stdlib
 #include <memory>
@@ -68,4 +68,4 @@ namespace pocketbook {
     };
 }
 
-#endif // !POCKETBOOK_TRANSACTION
+#endif // !POCKETBOOK_TRANSACTION_HPP
