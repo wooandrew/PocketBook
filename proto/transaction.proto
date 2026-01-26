@@ -1,25 +1,29 @@
 // Transaction Protocol
 syntax = "proto3";
 
+import "common.proto";
+
+enum TransactionType {
+    DEPOSIT = 0;
+    WITHDRAW = 1;
+}
+
 message Money {
-    int64 units = 1;
-    int32 nanos = 2;
+    uint64 units = 1;
+    uint32 nanos = 2;
 }
 
 message NewTransactionRequest {
-    Money amount = 1;
-    string account = 2;
+    TransactionType type = 1;
+    Money amount = 2;
+    string account = 3;
 }
 
 message NewTransactionResponse {
-    enum Status {
-        OK = 0;
-        FAILURE = 1;
-    }
-    Status status = 1;
+    common.Status status = 1;
     string transaction_id = 2;
 }
 
-service Transaction {
+service TransactionProto {
     rpc NewTransaction(NewTransactionRequest) returns (NewTransactionResponse) {}
 }

@@ -1,4 +1,4 @@
-// pocketbook - server.cpp
+// pocketbook - proto/server.cpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 // Header
@@ -19,10 +19,15 @@
 namespace pocketbook {
 
     void Server::init() {
+        
         proto::ServiceImpl service;
+        proto::TransactionImpl transactionService;
+        
         grpc::ServerBuilder builder;
         builder.AddListeningPort("127.0.0.1:29800", grpc::InsecureServerCredentials());
+        
         builder.RegisterService(&service);
+        builder.RegisterService(&transactionService);
 
         server = builder.BuildAndStart();
         server->Wait();

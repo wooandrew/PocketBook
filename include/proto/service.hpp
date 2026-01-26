@@ -1,4 +1,4 @@
-// proto/service.hpp
+// pocketbook - proto/service.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
 #ifndef PROTO_SERVICE_HPP

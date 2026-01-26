@@ -2,9 +2,9 @@
 
 # PROTOLIB
 add_library(protolib STATIC
-    "service.cpp"
     "server.cpp"
-    # "proto/transaction.cpp" "proto/transaction.h"
+    "service.cpp"
+    "transaction.cpp"
 )
 
 target_link_libraries(protolib 

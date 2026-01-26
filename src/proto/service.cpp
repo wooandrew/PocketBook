@@ -11,6 +11,7 @@
 #include <grpcpp/grpcpp.h>
 
 // pblib
+#include <proto/common.hpp>
     
 namespace pocketbook::proto {
 
@@ -19,9 +20,9 @@ namespace pocketbook::proto {
     {
         std::string ConnectMessage = request->connectmessage();
 
-        std::cout << "[Server] Connection request received: " << ConnectMessage << std::endl;
+        std::cout << "[Server] ConnectRequest received: " << ConnectMessage << std::endl;
 
-        response->set_status(::Status::OK);
+        response->set_status(common::Status::OK);
 
         return grpc::Status::OK;
     }
@@ -31,9 +32,9 @@ namespace pocketbook::proto {
     {
         std::string DisconnectMessage = request->disconnectmessage();
 
-        std::cout << "[Server] Disconnect request received: " << DisconnectMessage << std::endl;
+        std::cout << "[Server] DisconnectRequest received: " << DisconnectMessage << std::endl;
 
-        response->set_status(::Status::OK);
+        response->set_status(common::Status::OK);
 
         return grpc::Status::OK;
     }

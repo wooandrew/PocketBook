@@ -1,17 +1,14 @@
 // Server Protocol
 syntax = "proto3";
 
-enum Status {
-    OK = 0;
-    FAILURE = 1;
-}
+import "common.proto";
 
 message ConnectRequest {
     string ConnectMessage = 1;
 }
 
 message ConnectResponse {
-    Status status = 1;
+    common.Status status = 1;
 }
 
 message DisconnectRequest {
@@ -19,7 +16,7 @@ message DisconnectRequest {
 }
 
 message DisconnectResponse {
-    Status status = 1;
+    common.Status status = 1;
 }
 
 service ServiceProto {

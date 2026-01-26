@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package common;
+
+enum Status {
+    OK = 0;
+    FAILURE = 1;
+    PENDING = 2;
+    PERMISSION_DENIED = 3;
+}
