@@ -30,9 +30,9 @@ set(gRPC_CARES_PROVIDER     "module" CACHE STRING "" FORCE)
 set(gRPC_SSL_PROVIDER       "module" CACHE STRING "" FORCE)
 
 FetchContent_Declare(
-  gRPC
-  GIT_REPOSITORY https://github.com/grpc/grpc
-  GIT_TAG        v1.76.0
+    gRPC
+    GIT_REPOSITORY https://github.com/grpc/grpc
+    GIT_TAG        v1.76.0
 )
 
 FetchContent_MakeAvailable(gRPC)
@@ -41,3 +41,4 @@ FetchContent_MakeAvailable(gRPC)
 # === Add Project Files === =======================================================================
 add_subdirectory(proto)     # Add the proto sub-directory
 add_subdirectory(src)       # Add the src sub-directory
+add_subdirectory(test)      # Add the test sub-directory

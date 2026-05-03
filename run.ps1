@@ -2,7 +2,7 @@
 
 param(
     [Parameter(Mandatory=$true)]
-    [ValidateSet("clean", "build", "run", "all", "start_client", "start_server")]
+    [ValidateSet("clean", "build", "test", "run", "all", "start_client", "start_server")]
     [string]$Target,
 
     [ValidateSet("Debug", "Release")]
@@ -11,6 +11,7 @@ param(
 
 $buildDir   = "build/$Config"
 $binDir     = "bin/$Config"
+$test       = "unittest.exe"
 $executable = "pocketbook.exe"
 $client     = "client.exe"
 
@@ -34,6 +35,16 @@ function Configure {
 function Build {
     Write-Host "Building project ($Config)..."
     cmake --build $buildDir --config $Config
+}
+
+function Test {
+    $exePath = Join-Path $binDir $test
+    if (Test-Path $exePath) {
+        Write-Host "Running unit tests ($Config)..."
+        & $exePath
+    } else {
+        Write-Host "Executable not found at $exePath"
+    }
 }
 
 function Run {
@@ -63,8 +74,9 @@ function StartServer {
 switch ($Target) {
     "clean" { Clean }
     "build" { Configure; Build }
+    "test" { Test }
     "run" { Run }
-    "all" { Clean; Configure; Build; Run }
+    "all" { Clean; Configure; Build; Test; Run }
     "start_client" { StartClient }
     "start_server" { StartServer }
 }

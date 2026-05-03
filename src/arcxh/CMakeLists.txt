@@ -1,4 +1,4 @@
-# src/pocketbook/CMakeLists.txt
+# src/arcxh/CMakeLists.txt
 
 add_library(arcxhlib STATIC
     "common.cpp"

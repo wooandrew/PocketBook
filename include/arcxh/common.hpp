@@ -1,8 +1,8 @@
 // arcxh/common.hpp
 // Copyright (c) 2025 - present <> Andrew Woo
 
-#ifndef POCKETBOOK_COMMON_HPP
-#define POCKETBOOK_COMMON_HPP
+#ifndef ARCXH_COMMON_HPP
+#define ARCXH_COMMON_HPP
 
 // stdlib
 #include <vector>
@@ -10,4 +10,4 @@
 
 std::vector<std::string> tokenize(const std::string& input, const char delimiter);
 
-#endif // !POCKETBOOK_COMMON_HPP
+#endif // !ARCXH_COMMON_HPP

@@ -2,46 +2,56 @@
 
 BUILD_DIR=build
 EXECUTABLE=myapp
+TESTS=test
 
 function clean() {
-  echo "Cleaning build directory..."
-  rm -rf "$BUILD_DIR"
+    echo "Cleaning build directory..."
+    rm -rf "$BUILD_DIR"
 }
 
 function configure() {
-  echo "Configuring project..."
-  cmake -S . -B "$BUILD_DIR"
+    echo "Configuring project..."
+    cmake -S . -B "$BUILD_DIR"
 }
 
 function build() {
-  echo "Building project..."
-  cmake --build "$BUILD_DIR"
+    echo "Building project..."
+    cmake --build "$BUILD_DIR"
 }
 
 function run() {
-  echo "Running executable..."
-  ./"$BUILD_DIR"/"$EXECUTABLE"
+    echo "Running executable..."
+    ./"$BUILD_DIR"/"$EXECUTABLE"
+}
+
+function test() {
+    echo "Running unit tests..."
+    ./"$BUILD_DIR"/"$TESTS"
 }
 
 case "$1" in
-  clean)
-    clean
-    ;;
-  build)
-    configure
-    build
-    ;;
-  run)
-    run
-    ;;
-  all)
-    clean
-    configure
-    build
-    run
-    ;;
-  *)
-    echo "Usage: $0 {clean|build|run|all}"
-    exit 1
-    ;;
+    clean)
+        clean
+        ;;
+    build)
+        configure
+        build
+        ;;
+    run)
+        run
+        ;;
+    test)
+        test
+        ;;
+    all)
+        clean
+        configure
+        build
+        test
+        run
+        ;;
+    *)
+        echo "Usage: $0 {clean|build|run|all}"
+        exit 1
+        ;;
 esac

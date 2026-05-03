@@ -34,18 +34,3 @@ set_target_properties(client PROPERTIES
 target_link_libraries(client PRIVATE pblib)
 target_link_libraries(client PRIVATE protolib)
 # === =============================================================================================
-
-# === Unit Tests === ==============================================================================
-add_executable(unittest
-    unit_test.cpp
-)
-
-# Set output directory
-set_target_properties(unittest PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin
-)
-
-# Link Libraries
-target_link_libraries(unittest PRIVATE arcxhlib)
-target_link_libraries(unittest PRIVATE pblib)
-target_link_libraries(unittest PRIVATE protolib)
