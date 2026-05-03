@@ -6,6 +6,7 @@ add_library(pblib STATIC
     money.cpp
     receipt.cpp
     transaction.cpp
+    serialize.cpp
 )
 
 target_include_directories(pblib PUBLIC ${PROJECT_SOURCE_DIR}/include)

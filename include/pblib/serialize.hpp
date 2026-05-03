@@ -9,9 +9,14 @@ namespace pocketbook {
     class ISerializable {
 
     public:
+        ~ISerializable() = default;
+        void save();
+        
+    protected:
+        bool isDirty;
 
     private:
-        virtual void serialize() = 0;
+        virtual void serialize() = 0; 
     };
 }
 

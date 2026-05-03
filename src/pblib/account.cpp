@@ -21,7 +21,7 @@ namespace pocketbook {
         balance(balance),
         ledger(std::make_shared<Ledger>())
     {
-
+        isDirty = false;
     };
 
     Account::~Account() {
@@ -29,7 +29,10 @@ namespace pocketbook {
     };
 
     void Account::serialize() {
-
+        
+        if (!isDirty) {
+            std::cout << "No need to serialize, isDirty == false" << std::endl;
+        }
     }
 
     int Account::setName(const std::string& name) {

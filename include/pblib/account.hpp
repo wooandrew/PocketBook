@@ -40,14 +40,14 @@ namespace pocketbook {
         int subBalance(const Money& amount);
 
         int newTransaction(const std::shared_ptr<Transaction>& transaction);
-
+        
     private:
-
+        
         std::string name;
         Money balance;
-
+        
         std::shared_ptr<Ledger> ledger;
-
+        
         void serialize() override;
     };
 }
