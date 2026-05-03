@@ -51,7 +51,7 @@ case "$1" in
         run
         ;;
     *)
-        echo "Usage: $0 {clean|build|run|all}"
+        echo "Usage: $0 {clean|build|test|run|all}"
         exit 1
         ;;
 esac
