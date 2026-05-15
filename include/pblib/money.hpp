@@ -26,6 +26,9 @@ namespace pocketbook {
         int setUnit(const int unit);
         int setNano(const int nano);
 
+        // Converters
+	int centToNano(const std::string& cent);
+
         // Arithmetic operators
         Money& operator+=(const Money& m);          // Add-equals
         Money operator+(const Money& m) const;      // Addition
@@ -54,3 +57,4 @@ namespace pocketbook {
 }
 
 #endif // !POCKETBOOK_MONEY_HPP
+

@@ -26,7 +26,11 @@ struct TestRegistrar {
 #define REGISTER_TEST(func) static TestRegistrar global_reg_##func(#func, func)
 
 // --- UNIT TESTS --- MONEY -----------------------------------------------------------------------
+pocketbook::Money int ut_create_money() {
 
+    return () ? ARCXH_SUCCESS : ARCXH_FAIL;
+}
+REGISTER_TEST(ut_create_money);
 // --- --------------------------------------------------------------------------------------------
 
 // --- UNIT TESTS --- ACCOUNT ---------------------------------------------------------------------
